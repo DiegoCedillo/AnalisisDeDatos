@@ -1,0 +1,11 @@
+services:
+  mysql:
+    build: ./mysql/
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=world_cup
+    ports:
+      - '3310:3306'
+    volumes: 
+      - ./mysqldata:/mysql/data
